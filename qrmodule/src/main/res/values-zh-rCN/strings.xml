@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">二维码模块</string>
+    <string name="scan_hint">将取景框对准二维码，即可自动扫描</string>
+    <string name="flash_light">闪光灯</string>
+</resources>

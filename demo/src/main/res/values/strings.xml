@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">QrModule</string>
+    <string name="start_scan">Start Scan</string>
+    <string name="scan_result">Scan Result Here</string>
+    <string name="input_content">Input Content(Required)</string>
+    <string name="ecc">Error Correction Level(Default:L(~7%))</string>
+    <string name="overlay_on">Overlay:ON</string>
+    <string name="overlay_off">Overlay:OFF</string>
+    <string name="overlay_xfermode">Overlay Xfermode</string>
+    <string name="footnote">Footnote(Feature Under Develop)</string>
+    <string name="input_qrsize">Qr Image Size(Required)</string>
+    <string name="input_margin">QrCode Margin(Default:2)</string>
+    <string name="title_qr_color">Set Qr Code Color.Default is Black(0,0,0)</string>
+    <string name="input_color_r">Red(0~255)</string>
+    <string name="input_color_g">Green(0~255)</string>
+    <string name="input_color_b">Blue(0~255)</string>
+    <string name="title_qr_bg_color">Set Qr Code Background Color.Default is White(255,255,255)</string>
+    <string name="input_bgColor_r">Red(0~255)</string>
+    <string name="input_bgColor_g">Green(0~255)</string>
+    <string name="input_bgColor_b">Blue(0~255)</string>
+    <string name="start_generate">Generate!</string>
+    <string name="overlay_size">Over Size(Required If Overlay has Set)</string>
+    <string name="overlay_alpha">Overlay Alpha(Default:255)</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_generate">Generate</string>
+
+</resources>
