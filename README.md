@@ -24,7 +24,7 @@
     <activity android:name="me.ydcool.lib.qrmodule.activity.QrScannerActivity"/>
 ```
 
-2. add essential permissions
+2. add permissions
 
 ```xml
     <uses-permission android:name="android.permission.CAMERA"/>
@@ -34,14 +34,14 @@
 
 3. Start your scanner activity.
 
-```
+```java
     Intent intent = new Intent(MainActivity.this, QrScannerActivity.class);
     startActivityForResult(intent, QrScannerActivity.QR_REQUEST_CODE);
 ```
 
 4. Finally receive scanner activity result in your MainActivity.
 
-```
+```java
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -63,7 +63,7 @@
 
 * Generate qr code with [QrGenerator.java]().
 
-```
+```java
     Bitmap qrCode = new QrGenerator.Builder()
         .content("https://github.com/Ydcool/QrModule")
         .qrSize(300)
@@ -87,4 +87,4 @@
 
 #### License
 
-QrModule is under Apache License 2.0.See the [LICENCE]() file for more info.
+QrModule is under Apache License 2.0.See the [LICENCE](https://github.com/Ydcool/QrModule/blob/master/LICENSE) file for more info.
