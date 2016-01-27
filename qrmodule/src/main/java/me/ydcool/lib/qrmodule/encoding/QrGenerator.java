@@ -9,9 +9,6 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
-import android.support.v4.content.ContextCompat;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -201,11 +198,11 @@ public final class QrGenerator {
          * Optional
          *
          * @param context context
-         * @param color   QRCode foreground color resource,default is {@link Color#BLACK}
+         * @param color   <b>@ColorRes</b>: QRCode foreground color resource,default is {@link Color#BLACK}
          * @return builder instance
          */
-        public Builder color(Context context, @ColorRes int color) {
-            return color(ContextCompat.getColor(context, color));
+        public Builder color(Context context, int color) {
+            return color(context.getResources().getColor(color));
         }
 
         /**
@@ -243,10 +240,10 @@ public final class QrGenerator {
          * Optional
          *
          * @param context the context to get resources instance.
-         * @param overlay the drawable overlay on QRCode, like app icon or something else.
+         * @param overlay <b>@DrawableRes</b>:the drawable overlay on QRCode, like app icon or something else.
          * @return builder instance
          */
-        public Builder overlay(Context context, @DrawableRes int overlay) {
+        public Builder overlay(Context context, int overlay) {
             return overlay(BitmapFactory.decodeResource(context.getResources(), overlay));
         }
 

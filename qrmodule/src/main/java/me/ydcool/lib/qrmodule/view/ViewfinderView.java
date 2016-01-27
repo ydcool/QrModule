@@ -22,7 +22,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -66,11 +65,11 @@ public final class ViewfinderView extends View {
         paint.setAntiAlias(true);
         paint.setTextAlign(Paint.Align.CENTER);
 
-        maskColor = ContextCompat.getColor(context, R.color.viewfinder_mask);
-        resultColor = ContextCompat.getColor(context, R.color.result_view);
-        frameColor = ContextCompat.getColor(context, R.color.viewfinder_frame);
-        laserColor = ContextCompat.getColor(context, R.color.viewfinder_laser);
-        resultPointColor = ContextCompat.getColor(context, R.color.possible_result_points);
+        maskColor = getContext().getResources().getColor(R.color.viewfinder_mask);
+        resultColor = getContext().getResources().getColor(R.color.result_view);
+        frameColor = getContext().getResources().getColor(R.color.viewfinder_frame);
+        laserColor = getContext().getResources().getColor(R.color.viewfinder_laser);
+        resultPointColor = getContext().getResources().getColor(R.color.possible_result_points);
         hintString = context.getString(R.string.scan_hint);
         scannerAlpha = 0;
         possibleResultPoints = new HashSet<>(5);

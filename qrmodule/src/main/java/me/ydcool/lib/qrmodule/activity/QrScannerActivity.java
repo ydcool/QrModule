@@ -1,5 +1,6 @@
 package me.ydcool.lib.qrmodule.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
@@ -9,7 +10,6 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
-import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
@@ -32,13 +32,13 @@ import me.ydcool.lib.qrmodule.view.ViewfinderView;
 /**
  * Initial the camera
  * override {@link #onQrResult(String)} to handle qr result if you want,
- * or we will default do {@link AppCompatActivity#setResult(int, Intent)}
- * with string extras "result" then call{@link AppCompatActivity#finish()}.
+ * or we will default do {@link Activity#setResult(int, Intent)}
+ * with string extras "result" then call{@link Activity#finish()}.
  *
  * @author Ryan.Tang
  *         modify: ydcool 2015-11-18 09:48:06 add method {@link #onQrResult(String)}
  */
-public class QrScannerActivity extends AppCompatActivity implements Callback {
+public class QrScannerActivity extends Activity implements Callback {
 
     private static final float BEEP_VOLUME = 0.10f;
     private static final long VIBRATE_DURATION = 200L;
@@ -77,8 +77,8 @@ public class QrScannerActivity extends AppCompatActivity implements Callback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_scanner);
 
-        if (getSupportActionBar() != null)
-            getSupportActionBar().hide();
+        if (getActionBar() != null)
+            getActionBar().hide();
 
         setUpButtons();
         setUpCamera();
@@ -197,8 +197,8 @@ public class QrScannerActivity extends AppCompatActivity implements Callback {
 
     /**
      * override this to handle qr result if you want,
-     * or we will default do {@link AppCompatActivity#setResult(int, Intent)}
-     * with string extras "result" then call{@link AppCompatActivity#finish()}.
+     * or we will default do {@link Activity#setResult(int, Intent)}
+     * with string extras "result" then call{@link Activity#finish()}.
      *
      * @param resultString qr scan result string.
      */
