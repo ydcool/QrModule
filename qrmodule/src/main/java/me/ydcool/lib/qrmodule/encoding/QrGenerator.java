@@ -261,7 +261,7 @@ public final class QrGenerator {
         /**
          * Optional
          *
-         * @param alpha the alpha of overlay bitmap, inside [0..255],default is 255 (opaque)
+         * @param alpha the alpha of overlay bitmap, range [0..255],default is 255 (opaque)
          * @return build instance
          */
         public Builder overlayAlpha(int alpha) {
