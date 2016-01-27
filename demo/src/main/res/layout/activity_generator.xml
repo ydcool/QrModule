@@ -20,8 +20,10 @@
             android:id="@+id/img_qr_generated"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:contentDescription="@string/app_name"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_default_qr"/>
 
         <View
             android:layout_width="match_parent"
@@ -30,39 +32,82 @@
             android:layout_marginTop="20dp"
             android:background="@android:color/darker_gray"/>
 
-        <EditText
-            android:id="@+id/edt_content"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/input_content"/>
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/edt_size"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/input_qrsize"
-            android:inputType="number"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/input_content"/>
 
-        <EditText
-            android:id="@+id/edt_margin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/input_margin"
-            android:inputType="number"/>
+            <EditText
+                android:id="@+id/edt_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"/>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title_qr_color"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/input_qrsize"/>
+
+            <EditText
+                android:id="@+id/edt_size"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/input_margin"/>
+
+            <EditText
+                android:id="@+id/edt_margin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@string/title_qr_color"/>
 
             <EditText
                 android:id="@+id/edt_color_r"
@@ -70,7 +115,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/input_color_r"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:textSize="12sp"/>
 
             <EditText
                 android:id="@+id/edt_color_g"
@@ -78,7 +124,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/input_color_g"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:textSize="12sp"/>
 
             <EditText
                 android:id="@+id/edt_color_b"
@@ -86,7 +133,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/input_color_b"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:textSize="12sp"/>
 
         </LinearLayout>
 
@@ -94,15 +142,18 @@
             android:layout_width="match_parent"
             android:layout_height="20dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title_qr_bg_color"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@string/title_qr_bg_color"/>
 
             <EditText
                 android:id="@+id/edt_color_bg_r"
@@ -110,7 +161,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/input_bgColor_r"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:textSize="12sp"/>
 
             <EditText
                 android:id="@+id/edt_color_bg_g"
@@ -118,7 +170,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/input_bgColor_g"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:textSize="12sp"/>
 
             <EditText
                 android:id="@+id/edt_color_bg_b"
@@ -126,7 +179,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/input_bgColor_b"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:textSize="12sp"/>
 
         </LinearLayout>
 
@@ -186,19 +240,48 @@
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/edt_overlay_size"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/overlay_size"
-            android:inputType="number"/>
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/edt_overlay_aplha"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/overlay_size"/>
+
+            <EditText
+                android:id="@+id/edt_overlay_size"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/overlay_alpha"
-            android:inputType="number"/>
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/overlay_alpha"/>
+
+            <EditText
+                android:id="@+id/edt_overlay_aplha"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/hint_alpha"
+                android:inputType="number"
+                android:textSize="12sp"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -226,11 +309,26 @@
             android:layout_height="20dp"/>
 
 
-        <EditText
-            android:id="@+id/edt_footnote"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/footnote"/>
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/footnote"/>
+
+            <EditText
+                android:id="@+id/edt_footnote"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"

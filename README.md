@@ -1,18 +1,18 @@
-### Android Qr Module
+### Android QR Module
 
 
 
 [![Download](https://api.bintray.com/packages/ydcool/maven/QrModule/images/download.svg)](https://bintray.com/ydcool/maven/QrModule/_latestVersion)
 
-> Thanks to [Ryan_Tang][].
-  本项目基于他[blog][]上的项目优化改进。
+> * Thanks to [Ryan_Tang][].本项目基于他[blog][]上的项目优化改进。
+  * Feel free to fork and pr.
 
 #### Features
 
 * Qr Scan
 * Qr Generate
 
-##### Qr Scan
+##### QR Scan
 
 ![](art/demo_scanner.gif)
 
@@ -21,7 +21,7 @@
 1.  Add gradle dependence:
 
 ```java
-    compile 'com.ydcool.lib:QrModule:lastest-intergration'
+    compile 'me.ydcool.lib:QrModule:lastest-intergration'
 ```
 
 2.  Add  [QrScannerActivity][] to your `AndroidManifest.xml`
@@ -87,10 +87,6 @@ See more details in Demo [MainActivity][].
     mImageView.setImageBitmap(qrCode);
 ```
 
-See more details in Demo [DemoGeneratorActivity][].
-
-* Method List
-
 | Method | Description |
 | ----- | ----- |
 | `content(String content)` | content of qr code. |
@@ -109,9 +105,14 @@ See more details in Demo [DemoGeneratorActivity][].
 | `footNote(String s)` | *This feature is under develop* . |
 | `encode()` | return a encoded qrCode bitmap. |
 
+#### TODO
+
+* Custom pattern support.
+
 #### License
 
-QrModule is under Apache License 2.0.See the [LICENSE][] file for more info.
+Apache License 2.0
+See the [LICENSE][] for more info.
 
 [Ryan_Tang]:http://blog.csdn.net/ryantang03
 [blog]:http://blog.csdn.net/ryantang03/article/details/7831826

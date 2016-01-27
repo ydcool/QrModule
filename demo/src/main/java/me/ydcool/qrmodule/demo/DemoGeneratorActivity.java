@@ -103,6 +103,7 @@ public class DemoGeneratorActivity extends AppCompatActivity {
                 return true;
             case R.id.action_generate:
                 onGenerateClick();
+                return true;
             default:
                 return false;
         }
@@ -183,13 +184,9 @@ public class DemoGeneratorActivity extends AppCompatActivity {
         });
     }
 
-    private boolean checkEmpty(EditText e) {
-        return TextUtils.isEmpty(e.getText());
-    }
-
     @SuppressLint("SetTextI18n")
     private void quickEdit(boolean clear) {
-        mEdtContent.setText(clear ? "" : "http://github.com/ydcool/QrModule");
+        mEdtContent.setText(clear ? "" : "https://github.com/Ydcool/QrModule");
         mEdtSize.setText(clear ? "" : "400");
         mEdtMargin.setText(clear ? "" : "2");
         mEdtColorR.setText(clear ? "" : "65");
@@ -211,7 +208,11 @@ public class DemoGeneratorActivity extends AppCompatActivity {
         mSpinnerXfermode.setSelection(PorterDuff.Mode.SRC_ATOP.ordinal(), true);
 
         if (clear)
-            mImgQrGenerated.setImageBitmap(null);
+            mImgQrGenerated.setImageResource(R.drawable.ic_default_qr);
+    }
+
+    private boolean checkEmpty(EditText e) {
+        return TextUtils.isEmpty(e.getText());
     }
 
     private int getInputtedInt(EditText edt, int def) {
@@ -221,7 +222,7 @@ public class DemoGeneratorActivity extends AppCompatActivity {
             if (TextUtils.isEmpty(s))
                 return def;
             else
-                return Integer.parseInt(edt.getText().toString());
+                return Integer.parseInt(s);
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -11,17 +11,19 @@
     <string name="input_qrsize">Qr Image Size(Required)</string>
     <string name="input_margin">QrCode Margin(Default:2)</string>
     <string name="title_qr_color">Set Qr Code Color.Default is Black(0,0,0)</string>
-    <string name="input_color_r">Red(0~255)</string>
-    <string name="input_color_g">Green(0~255)</string>
-    <string name="input_color_b">Blue(0~255)</string>
+    <string name="input_color_r">R(0~255)</string>
+    <string name="input_color_g">G(0~255)</string>
+    <string name="input_color_b">B(0~255)</string>
     <string name="title_qr_bg_color">Set Qr Code Background Color.Default is White(255,255,255)</string>
-    <string name="input_bgColor_r">Red(0~255)</string>
-    <string name="input_bgColor_g">Green(0~255)</string>
-    <string name="input_bgColor_b">Blue(0~255)</string>
+    <string name="input_bgColor_r">R(0~255)</string>
+    <string name="input_bgColor_g">G(0~255)</string>
+    <string name="input_bgColor_b">B(0~255)</string>
     <string name="start_generate">Generate!</string>
     <string name="overlay_size">Over Size(Required If Overlay has Set)</string>
-    <string name="overlay_alpha">Overlay Alpha(Default:255)</string>
+    <string name="overlay_alpha">Overlay Alpha,Default:255(Opaque)</string>
     <string name="action_clear">Clear</string>
     <string name="action_generate">Generate</string>
+    <string name="hint_alpha">0~255</string>
+    <string name="qr_code_generate_placeholder">Generated QrCode.</string>
 
 </resources>
