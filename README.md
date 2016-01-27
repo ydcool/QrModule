@@ -14,14 +14,14 @@
 
 ##### QR Scan
 
-![](art/demo_scanner.gif)
+![](art/demo_scan.gif)
 
 ###### Usage
 
 1.  Add gradle dependence:
 
 ```java
-    compile 'me.ydcool.lib:QrModule:lastest-intergration'
+    compile 'me.ydcool.lib:QrModule:lastest.integration'
 ```
 
 2.  Add  [QrScannerActivity][] to your `AndroidManifest.xml`
