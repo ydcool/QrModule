@@ -15,7 +15,7 @@
 
 ##### QR Scan
 
-Demo [Apk download][] or scan ![](https://api.qrserver.com/v1/create-qr-code/?data=http://7xiilm.com1.z0.glb.clouddn.com/apk%2Fqrmodule-demo-v1.0.apk&size=120x120)    
+Demo APK [download][] or scan ![](https://api.qrserver.com/v1/create-qr-code/?data=http://7xiilm.com1.z0.glb.clouddn.com/apk%2Fqrmodule-demo-v1.0.apk&size=120x120)    
 
 ![](art/demo_scan.gif)
 
@@ -24,7 +24,7 @@ Demo [Apk download][] or scan ![](https://api.qrserver.com/v1/create-qr-code/?da
 1  Add gradle dependence:
 
 ```java
-    compile 'me.ydcool.lib:QrModule:lastest.integration'
+    compile 'me.ydcool.lib:qrmodule:latest.integration'
 ```
 
 2  Add  [QrScannerActivity][] to your `AndroidManifest.xml`
@@ -84,7 +84,6 @@ See more details in Demo [MainActivity][].
        .overlaySize(100)
        .overlayAlpha(255)
        .overlayXfermode(PortBuff.Mode.SRC_ATOP)
-       .footNote("Hello World!")
        .encode();
 
     mImageView.setImageBitmap(qrCode);
@@ -127,4 +126,4 @@ See the [LICENSE][] for more info.
 [EncodeHintType.MARGIN]:https://github.com/zxing/zxing/blob/master/core/src/main/java/com/google/zxing/EncodeHintType.java
 [ErrorCorrectionLevel]:https://github.com/zxing/zxing/blob/master/core/src/main/java/com/google/zxing/qrcode/decoder/ErrorCorrectionLevel.java
 [PorterDuff.Mode]:http://developer.android.com/reference/android/graphics/PorterDuff.Mode.html
-[Apk download]:http://7xiilm.com1.z0.glb.clouddn.com/apk%2Fqrmodule-demo-v1.0.apk
+[download]:http://7xiilm.com1.z0.glb.clouddn.com/apk%2Fqrmodule-demo-v1.0.apk
