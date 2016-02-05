@@ -3,6 +3,7 @@
 
 
 [![Download](https://api.bintray.com/packages/ydcool/maven/QrModule/images/download.svg)](https://bintray.com/ydcool/maven/QrModule/_latestVersion)
+[![Build Status](https://travis-ci.org/Ydcool/QrModule.svg?branch=master)](https://travis-ci.org/Ydcool/QrModule)
 
 >
 * Thanks to [Ryan_Tang][].本项目基于他[blog][]上的项目优化改进。
