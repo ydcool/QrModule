@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Qrmodule by Ydcool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Qrmodule</h1>
+      <h2 class="project-tagline">Android Qr Scan and generate module.Based on Google Zxing library.</h2>
+      <a href="https://github.com/Ydcool/QrModule" class="btn">View on GitHub</a>
+      <a href="https://github.com/Ydcool/QrModule/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Ydcool/QrModule/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="android-qr-module" class="anchor" href="#android-qr-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Android QR Module</h3>
+
+<p><a href="https://bintray.com/ydcool/maven/QrModule/_latestVersion"><img src="https://api.bintray.com/packages/ydcool/maven/QrModule/images/download.svg" alt="Download"></a>
+<a href="https://travis-ci.org/Ydcool/QrModule"><img src="https://travis-ci.org/Ydcool/QrModule.svg?branch=master" alt="Build Status"></a></p>
+
+<blockquote>
+<ul>
+<li>Thanks to <a href="http://blog.csdn.net/ryantang03">Ryan_Tang</a>.本项目基于他<a href="http://blog.csdn.net/ryantang03/article/details/7831826">blog</a>上的项目优化改进。</li>
+<li>Feel free to fork and pr.</li>
+</ul>
+</blockquote>
+
+<h4>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h4>
+
+<ul>
+<li>Qr Scan</li>
+<li>Qr Generate</li>
+</ul>
+
+<h5>
+<a id="qr-scan" class="anchor" href="#qr-scan" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>QR Scan</h5>
+
+<p>Demo APK <a href="http://7xiilm.com1.z0.glb.clouddn.com/apk%2Fqrmodule-demo-v1.0.apk">download</a> or scan <img src="https://api.qrserver.com/v1/create-qr-code/?data=http://7xiilm.com1.z0.glb.clouddn.com/apk%2Fqrmodule-demo-v1.0.apk&amp;size=120x120" alt="">    </p>
+
+<p><img src="art/demo_scan.gif" alt=""></p>
+
+<h6>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h6>
+
+<p>1  Add gradle dependence:</p>
+
+<div class="highlight highlight-source-java"><pre>    compile <span class="pl-s"><span class="pl-pds">'</span>me.ydcool.lib:qrmodule:latest.integration<span class="pl-pds">'</span></span></pre></div>
+
+<p>2  Add  <a href="https://github.com/Ydcool/QrModule/blob/master/qrmodule/src/main/java/me/ydcool/lib/qrmodule/activity/QrScannerActivity.java">QrScannerActivity</a> to your <code>AndroidManifest.xml</code></p>
+
+<div class="highlight highlight-text-xml"><pre>    &lt;<span class="pl-ent">activity</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>me.ydcool.lib.qrmodule.activity.QrScannerActivity<span class="pl-pds">"</span></span>/&gt;</pre></div>
+
+<p>3  Add permissions</p>
+
+<div class="highlight highlight-text-xml"><pre>    &lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.CAMERA<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.FLASHLIGHT<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.VIBRATE<span class="pl-pds">"</span></span>/&gt;</pre></div>
+
+<p>4  Start <code>QrScannerActivity</code> in your activity.</p>
+
+<div class="highlight highlight-source-java"><pre>    <span class="pl-smi">Intent</span> intent <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Intent</span>(<span class="pl-smi">MainActivity</span><span class="pl-k">.</span><span class="pl-v">this</span>, <span class="pl-smi">QrScannerActivity</span><span class="pl-k">.</span>class);
+    startActivityForResult(intent, <span class="pl-smi">QrScannerActivity</span><span class="pl-c1"><span class="pl-k">.</span>QR_REQUEST_CODE</span>);</pre></div>
+
+<p>5  And receive scanner activity result in your activity.</p>
+
+<div class="highlight highlight-source-java"><pre>    @<span class="pl-smi">Override</span>
+    <span class="pl-k">protected</span> <span class="pl-k">void</span> onActivityResult(<span class="pl-k">int</span> requestCode, <span class="pl-k">int</span> resultCode, <span class="pl-smi">Intent</span> data) {
+        <span class="pl-v">super</span><span class="pl-k">.</span>onActivityResult(requestCode, resultCode, data);
+        <span class="pl-k">if</span> (requestCode <span class="pl-k">==</span> <span class="pl-smi">QrScannerActivity</span><span class="pl-c1"><span class="pl-k">.</span>QR_REQUEST_CODE</span>) {
+            <span class="pl-smi">Log</span><span class="pl-k">.</span>d(<span class="pl-c1">TAG</span>, resultCode <span class="pl-k">==</span> <span class="pl-c1">RESULT_OK</span>
+                            <span class="pl-k">?</span> data<span class="pl-k">.</span>getExtras()<span class="pl-k">.</span>getString(<span class="pl-smi">QrScannerActivity</span><span class="pl-c1"><span class="pl-k">.</span>QR_RESULT_STR</span>)
+                            <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Scanned Nothing!<span class="pl-pds">"</span></span>);
+        }
+    }</pre></div>
+
+<p>See more details in Demo <a href="https://github.com/Ydcool/QrModule/blob/master/demo/src/main/java/me/ydcool/qrmodule/demo/MainActivity.java">MainActivity</a>.</p>
+
+<h5>
+<a id="qr-generate" class="anchor" href="#qr-generate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>QR Generate</h5>
+
+<p><img src="art/demo_generate.gif" alt=""></p>
+
+<h6>
+<a id="usage-1" class="anchor" href="#usage-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h6>
+
+<ul>
+<li>Generate qr code with <code>QrGenerator</code>.</li>
+</ul>
+
+<div class="highlight highlight-source-java"><pre>   <span class="pl-smi">Bitmap</span> qrCode <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">QrGenerator</span>.<span class="pl-smi">Builder</span>()
+       .content(<span class="pl-s"><span class="pl-pds">"</span>https://github.com/Ydcool/QrModule<span class="pl-pds">"</span></span>)
+       .qrSize(<span class="pl-c1">300</span>)
+       .margin(<span class="pl-c1">2</span>)
+       .color(<span class="pl-smi">Color</span><span class="pl-c1"><span class="pl-k">.</span>BLACK</span>)
+       .bgColor(<span class="pl-smi">Color</span><span class="pl-c1"><span class="pl-k">.</span>WHITE</span>)
+       .ecc(<span class="pl-smi">ErrorCorrectionLevel</span><span class="pl-k">.</span><span class="pl-smi">H</span>)
+       .overlay(getContext(),<span class="pl-smi">R</span><span class="pl-k">.</span>mipmap<span class="pl-k">.</span>ic_launcher)
+       .overlaySize(<span class="pl-c1">100</span>)
+       .overlayAlpha(<span class="pl-c1">255</span>)
+       .overlayXfermode(<span class="pl-smi">PortBuff</span><span class="pl-k">.</span><span class="pl-smi">Mode</span><span class="pl-c1"><span class="pl-k">.</span>SRC_ATOP</span>)
+       .encode();
+
+    mImageView<span class="pl-k">.</span>setImageBitmap(qrCode);</pre></div>
+
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content(String content)</code></td>
+<td>content of qr code.</td>
+</tr>
+<tr>
+<td><code>qrSize(int size)</code></td>
+<td>qr code image size.</td>
+</tr>
+<tr>
+<td><code>margin(int margin)</code></td>
+<td>default is 2.See more about <a href="https://github.com/zxing/zxing/blob/master/core/src/main/java/com/google/zxing/EncodeHintType.java">EncodeHintType.MARGIN</a>
+</td>
+</tr>
+<tr>
+<td><code>color(int color)</code></td>
+<td>qr code foreground color.</td>
+</tr>
+<tr>
+<td><code>color(Context c, @ColorRes int color)</code></td>
+<td>set foreground color with color resource.</td>
+</tr>
+<tr>
+<td><code>bgColor(int color)</code></td>
+<td>set the background color.</td>
+</tr>
+<tr>
+<td><code>bgColor(Context c,@ColorRes int color)</code></td>
+<td>set the background color with color resource.</td>
+</tr>
+<tr>
+<td><code>ecc(ErrorCorrectionLevel e)</code></td>
+<td>error correction level , default is <code>L</code> (~7%).See more about <a href="https://github.com/zxing/zxing/blob/master/core/src/main/java/com/google/zxing/qrcode/decoder/ErrorCorrectionLevel.java">ErrorCorrectionLevel</a>.</td>
+</tr>
+<tr>
+<td><code>overlay(Bitmap overlay)</code></td>
+<td>overlay image on qr code, usually set with logo. <strong>NOTICE: once you set overlay image,you'd better set <code>ecc</code> to <code>H</code></strong>.</td>
+</tr>
+<tr>
+<td><code>overlay(Context c,@DrawableRes int overlay)</code></td>
+<td>set overlay with drawable resource.</td>
+</tr>
+<tr>
+<td><code>overlaySize(int size)</code></td>
+<td>overlay image size in qr code.</td>
+</tr>
+<tr>
+<td><code>overlayAlpha(int alpha)</code></td>
+<td>set overlay image alpha, range [0,255], default is 255(opaque).</td>
+</tr>
+<tr>
+<td><code>overlayXfermode(PorterDuff.Mode m)</code></td>
+<td>set xfermode for overlay bitmap,default is <code>SRC</code>,see more about <a href="http://developer.android.com/reference/android/graphics/PorterDuff.Mode.html">PorterDuff.Mode</a>.</td>
+</tr>
+<tr>
+<td><code>footNote(String s)</code></td>
+<td>
+<em>This feature is under develop</em> .</td>
+</tr>
+<tr>
+<td><code>encode()</code></td>
+<td>return a encoded qrCode bitmap.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h4>
+
+<ul>
+<li>Custom pattern support.</li>
+</ul>
+
+<h4>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h4>
+
+<p>Apache License. 
+See the <a href="https://github.com/Ydcool/QrModule/blob/master/LICENSE">LICENSE</a> for more info.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Ydcool/QrModule">Qrmodule</a> is maintained by <a href="https://github.com/Ydcool">Ydcool</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
