@@ -127,4 +127,4 @@ See the [LICENSE][] for more info.
 [EncodeHintType.MARGIN]:https://github.com/zxing/zxing/blob/master/core/src/main/java/com/google/zxing/EncodeHintType.java
 [ErrorCorrectionLevel]:https://github.com/zxing/zxing/blob/master/core/src/main/java/com/google/zxing/qrcode/decoder/ErrorCorrectionLevel.java
 [PorterDuff.Mode]:http://developer.android.com/reference/android/graphics/PorterDuff.Mode.html
-[download]:http://7xiilm.com1.z0.glb.clouddn.com/apk%2Fqrmodule-demo-v1.0.apk
+[download]:http://cdn.ydcool.me/apk%2Fqrmodule-demo-v1.0.apk
