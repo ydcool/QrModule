@@ -16,7 +16,7 @@
 
 ##### QR Scan
 
-Demo APK [download][] or scan ![](https://api.qrserver.com/v1/create-qr-code/?data=http://7xiilm.com1.z0.glb.clouddn.com/apk%2Fqrmodule-demo-v1.0.apk&size=120x120)    
+Demo APK [download][] or scan ![](https://api.qrserver.com/v1/create-qr-code/?data=http://cdn.ydcool.me/apk%2Fqrmodule-demo-v1.0.apk&size=120x120)    
 
 ![](art/demo_scan.gif)
 
